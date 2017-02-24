@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,25 +18,36 @@ import java.util.ResourceBundle;
  */
 public class StartSceneControls implements Initializable{
 
+    public static String characters = "";
+    public String lines = "";
+    public String scenes = "";
+    @FXML
+    private Button buttonCharacters;
+    @FXML
+    private Button buttonChinese;
+    @FXML
+    private Button buttonEnglish;
+    @FXML
+    private TextField textFieldChinese;
+    @FXML
+    private TextField textFieldEnglish;
+    @FXML
+    private TextField textFieldCharacter;
+
+    public static String getCharacters() {
+        return characters;
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
 
-    @FXML
-    private Button buttonCharacters;
-
-    @FXML
-    private Button buttonChinese;
-
-    @FXML
-    private Button buttonEnglish;
-
     public void handleButtonCharacters(ActionEvent event) throws IOException {
         Parent characterNode = FXMLLoader.load(getClass().getResource("CharactersScene.fxml"));
         Scene characterScene = new Scene(characterNode, 1082, 692);
         Stage homePage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        characters = textFieldCharacter.getText();
         homePage.hide();
         homePage.setScene(characterScene);
         homePage.show();
