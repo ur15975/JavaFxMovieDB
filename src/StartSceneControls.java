@@ -19,8 +19,10 @@ import java.util.ResourceBundle;
 public class StartSceneControls implements Initializable{
 
     public static String characters = "";
-    public String lines = "";
-    public String scenes = "";
+    public static String linesChinese = "";
+    public static String linesEnglish = "";
+    public static String scenes = "";
+    public static Stage searchStage;
     @FXML
     private Button buttonCharacters;
     @FXML
@@ -44,10 +46,9 @@ public class StartSceneControls implements Initializable{
     }
 
     public void handleButtonCharacters(ActionEvent event) throws IOException {
-        Parent characterNode = FXMLLoader.load(getClass().getResource("CharactersScene.fxml"));
+        Parent characterNode = FXMLLoader.load(getClass().getResource("CharactersList.fxml"));
         Scene characterScene = new Scene(characterNode, 1082, 692);
         Stage homePage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        characters = textFieldCharacter.getText();
         homePage.hide();
         homePage.setScene(characterScene);
         homePage.show();
@@ -57,6 +58,8 @@ public class StartSceneControls implements Initializable{
         Parent chineseNode = FXMLLoader.load(getClass().getResource("AllLinesScene.fxml"));
         Scene chineseScene = new Scene(chineseNode, 1082, 692);
         Stage homePage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        linesChinese = textFieldChinese.getText();
+        linesEnglish = textFieldEnglish.getText();
         homePage.hide();
         homePage.setScene(chineseScene);
         homePage.show();

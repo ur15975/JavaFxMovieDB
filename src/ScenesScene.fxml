@@ -7,52 +7,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
-            maxHeight="-Infinity"
-            maxWidth="-Infinity"
-            minHeight="-Infinity"
-            minWidth="-Infinity"
-            prefHeight="692.0"
-            prefWidth="1082.0"
-            xmlns="http://javafx.com/javafx/8.0.102"
-            fx:controller="ScenesSceneControls">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="692.0" prefWidth="1082.0" xmlns="http://javafx.com/javafx/8.0.102" fx:controller="ScenesSceneControls">
     <children>
         <Label />
-        <TableView fx:id="tableScene"
-                   layoutX="56.0"
-                   layoutY="124.0"
-                   prefHeight="485.0"
-                   prefWidth="989.0">
+        <TableView fx:id="tableScene" layoutX="56.0" layoutY="124.0" prefHeight="485.0" prefWidth="989.0">
             <columns>
-                <TableColumn fx:id="columnTime"
-                             prefWidth="95.0"
-                             text="时间" />
-                <TableColumn fx:id="columnScene"
-                             prefWidth="178.0"
-                             text="场景" />
-                <TableColumn fx:id="columnChineseLines"
-                             prefWidth="715.0"
-                             text="中文台词" />
+                <TableColumn fx:id="columnTime" prefWidth="95.0" text="时间" />
+                <TableColumn fx:id="columnScene" prefWidth="178.0" text="场景" />
+                <TableColumn fx:id="columnChineseLines" prefWidth="715.0" text="中文台词" />
             </columns>
         </TableView>
-        <Label layoutX="437.0"
-               layoutY="50.0"
-               prefHeight="50.0"
-               prefWidth="269.0"
-               text="场景列表">
+        <Label layoutX="437.0" layoutY="50.0" prefHeight="50.0" prefWidth="269.0" text="场景列表">
             <font>
-                <Font name="Microsoft Tai Le"
-                      size="39.0" />
+                <Font name="Microsoft Tai Le" size="39.0" />
             </font>
         </Label>
-        <Button fx:id="buttonLoad"
-                onAction="#loadDataFromDatabase"
-                layoutX="56.0"
-                layoutY="617.0"
-                mnemonicParsing="false"
-                prefHeight="43.0"
-                prefWidth="180.0"
-                text="LOAD DETAILS">
+        <Button fx:id="buttonLoad" layoutX="56.0" layoutY="617.0" mnemonicParsing="false" onAction="#loadDataFromDatabase" prefHeight="43.0" prefWidth="180.0" text="载入数据">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="returnButton" layoutX="865.0" layoutY="617.0" mnemonicParsing="false" onAction="#returnHomePage" prefHeight="43.0" prefWidth="180.0" text="返回主界面">
             <font>
                 <Font size="18.0" />
             </font>
