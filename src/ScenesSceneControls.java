@@ -47,10 +47,6 @@ public class ScenesSceneControls implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         dbConnection = new DbConnection();
-    }
-
-    @FXML
-    private void loadDataFromDatabase(ActionEvent event) {
         try {
             Connection connection = dbConnection.connection();
             data = FXCollections.observableArrayList();

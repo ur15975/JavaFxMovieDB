@@ -54,19 +54,15 @@ public class AllLinesSceneControls implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         dbConnection = new DbConnection();
-    }
-
-    @FXML
-    private void loadDataFromDatabase(ActionEvent event) {
         try {
             ResultSet resultSet;
             Connection connection = dbConnection.connection();
             data = FXCollections.observableArrayList();
             if (!StartSceneControls.linesChinese.trim().equals("")){
-                resultSet = connection.createStatement().executeQuery("SELECT * FROM sheet1 WHERE sheet1.chineseLine LIKE '%" + StartSceneControls.linesChinese.trim() + "%'");
+                resultSet = connection.createStatement().executeQuery("SELECT * FROM sheet1 WHERE sheet1.chineseLine LIKE '%" + StartSceneControls.getLinesChinese().trim() + "%'");
             }
             else if(!StartSceneControls.linesEnglish.trim().equals("")){
-                resultSet = connection.createStatement().executeQuery("SELECT * FROM sheet1 WHERE sheet1.englishLine LIKE '%" + StartSceneControls.linesEnglish.trim() + "%'");
+                resultSet = connection.createStatement().executeQuery("SELECT * FROM sheet1 WHERE sheet1.englishLine LIKE '%" + StartSceneControls.getLinesEnglish().trim() + "%'");
             }
             else {
                 resultSet = connection.createStatement().executeQuery("SELECT * FROM sheet1");

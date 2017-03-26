@@ -40,6 +40,14 @@ public class StartSceneControls implements Initializable{
         return characters;
     }
 
+    public static String getLinesChinese() {
+        return linesChinese;
+    }
+
+    public static String getLinesEnglish() {
+        return linesEnglish;
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

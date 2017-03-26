@@ -26,6 +26,7 @@ import java.util.ResourceBundle;
 public class CharactersSceneControls implements Initializable {
 
 
+
     @FXML
     private TableView<DataModels> tableCharacters;
 
@@ -48,11 +49,6 @@ public class CharactersSceneControls implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         dbConnection = new DbConnection();
-    }
-
-
-    @FXML
-    private void loadDataFromDatabase(ActionEvent event) {
         try {
             Connection connection = dbConnection.connection();
             data = FXCollections.observableArrayList();
