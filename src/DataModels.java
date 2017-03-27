@@ -7,11 +7,15 @@ import javafx.beans.property.StringProperty;
  * Created by Administrator on 2017/2/24.
  */
 public class DataModels {
-    private final StringProperty englishLine;
-    private final StringProperty chineseLine;
-    private final IntegerProperty time;
-    private final StringProperty character;
-    private final StringProperty scene;
+    private StringProperty englishLine;
+    private StringProperty chineseLine;
+    private IntegerProperty time;
+    private StringProperty character;
+    private StringProperty scene;
+
+    public DataModels() {
+
+    }
 
     public DataModels(String englishLine, String chineseLine, int time, String character, String scene) {
         this.englishLine = new SimpleStringProperty(englishLine);

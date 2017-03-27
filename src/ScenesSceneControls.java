@@ -43,7 +43,6 @@ public class ScenesSceneControls implements Initializable {
     private ObservableList<DataModels>data;
     private DbConnection dbConnection;
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         dbConnection = new DbConnection();
@@ -71,7 +70,7 @@ public class ScenesSceneControls implements Initializable {
     @FXML
     private void returnHomePage(ActionEvent event) throws IOException {
         Parent homeNode = FXMLLoader.load(getClass().getResource("StartScene.fxml"));
-        Scene homeScene = new Scene(homeNode, 394, 283);
+        Scene homeScene = new Scene(homeNode, 380, 209);
         Stage homeStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         homeStage.hide();
         homeStage.setScene(homeScene);

@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<GridPane xmlns:fx="http://javafx.com/fxml/1" gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.102">
+<GridPane xmlns:fx="http://javafx.com/fxml/1" gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.112" fx:controller="CharactersListControls">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
@@ -34,9 +34,7 @@
                   <Label text="安迪·杜佛兰" />
                   <Label text="Andy Dufresne" />
                   <Text text="年轻银行家，原欲报复妻子外遇，后反悔打消念头，不料妻子及情夫当晚即遭杀害，被诬陷杀害二人罪名，进入肖申克监狱。后在监狱待了19年后，在监狱中办监狱图书室，为囚犯播放美妙的音乐，还利用自己的知识帮助大家打点自己的财务，典狱长发现他的理财特长后让他帮助自己清洗黑钱做假帐。通过瑞德陆续获得凿子之类的小工具，利用期间打造的地道逃狱，重获新生。" wrappingWidth="220" />
-                  <Button
-                          fx:id="andyButton"
-                          text="查看台词" />
+                  <Button fx:id="andyButton" onAction="#handleAndyButton" text="查看台词" />
                </children>
             </VBox>
          </children>
@@ -54,10 +52,7 @@
                    <Label text="艾利斯·波德·瑞德" />
                    <Label text="Ellis Boyd 'Red' Redding" />
                    <Text text="肖申克监狱囚犯之一，狱中交易商，与安迪结为好友在狱中数次为安迪提供凿子之类的小工具。曾经数度申请假释均被驳回，安迪逃狱后，终于获得假释并且与老友重逢。" wrappingWidth="220" />
-                   <Button
-                           fx:id="redButton"
-                           mnemonicParsing="false"
-                           text="查看台词" />
+                   <Button fx:id="redButton" mnemonicParsing="false" onAction="#handleredButton" text="查看台词" />
                </children>
             </VBox>
          </children>
@@ -75,10 +70,7 @@
                        <Label text="海伍德" />
                        <Label text="Heywood" />
                        <Text text="肖申克监狱囚犯之一，安迪与瑞德的狱中好友，曾被老布挟持。" wrappingWidth="220" />
-                       <Button
-                               fx:id="heywoodButton"
-                               mnemonicParsing="false"
-                               text="查看台词" />
+                       <Button fx:id="heywoodButton" mnemonicParsing="false" onAction="#handleheywoodButton" text="查看台词" />
                    </children>
                </VBox>
            </children>
@@ -96,7 +88,7 @@
                        <Label text="山姆·诺顿" />
                        <Label text="Warden Norton" />
                        <Text text="肖申克监狱典狱长，当得知安迪的理财能力之后，典狱长开始利用安迪替其污钱、作黑帐，渐渐露出魔鬼狰狞的面容，最后安迪于狱外举发他的罪行，丑闻败露只得饮弹自尽。" wrappingWidth="220" />
-                       <Button fx:id="nortonButton" mnemonicParsing="false" text="查看台词" />
+                       <Button fx:id="nortonButton" mnemonicParsing="false" onAction="#handlenortonButton" text="查看台词" />
                    </children>
                </VBox>
            </children>
@@ -114,7 +106,7 @@
                        <Label text="拜伦·海利" />
                        <Label text="Captain Hadley" />
                        <Text text="肖申克监狱队长，是诺顿的手下，与诺顿同流合污。诺顿贪污东窗事发之后也遭到了逮捕。" wrappingWidth="220" />
-                       <Button fx:id="hadleyButton" mnemonicParsing="false" text="查看台词" />
+                       <Button fx:id="hadleyButton" mnemonicParsing="false" onAction="#handlehadleyButton" text="查看台词" />
                    </children>
                </VBox>
            </children>
@@ -132,7 +124,7 @@
                        <Label text="汤米·威廉斯" />
                        <Label text="Tommy" />
                        <Text text="年轻的肖申克监狱囚犯，曾多次因为窃盗罪入狱，期间与安迪杀妻案的真正凶手同房过。当他将事实告诉安迪后，典狱长怕事情曝露而暗中将他枪杀。" wrappingWidth="220" />
-                       <Button fx:id="tommyButton" mnemonicParsing="false" text="查看台词" />
+                       <Button fx:id="tommyButton" mnemonicParsing="false" onAction="#handletommyButton" text="查看台词" />
                    </children>
                </VBox>
            </children>
@@ -150,7 +142,7 @@
                        <Label text="布鲁克斯·海特伦" />
                        <Label text="Brooks Hatlen" />
                        <Text text="肖申克监狱的年长囚犯，被狱友称作“老布”。面对释放的机会他却宁愿以身试法也不愿离开监狱，最后在监狱外面生活不适应直至最后绝望自杀。" wrappingWidth="220" />
-                       <Button fx:id="brooksButton" mnemonicParsing="false" text="查看台词" />
+                       <Button fx:id="brooksButton" mnemonicParsing="false" onAction="#handlebrooksButton" text="查看台词" />
                    </children>
                </VBox>
            </children>
@@ -168,7 +160,7 @@
                        <Label text="包格斯·戴蒙" />
                        <Label text="Bogs Diamond" />
                        <Text text="狱中鸡奸犯“三相助”的头目，安迪入狱之初每天除了在洗衣房干活就是与包格斯一伙人抗争，遭到多次施暴，有一次包格斯将安迪打成重伤而被哈德利队长一顿毒打，成为终身残疾。" wrappingWidth="220" />
-                       <Button fx:id="bogsButton" mnemonicParsing="false" text="查看台词" />
+                       <Button fx:id="bogsButton" mnemonicParsing="false" onAction="#handlebogsButton" text="查看台词" />
                    </children>
                </VBox>
            </children>
@@ -186,8 +178,8 @@
                        <Label text="其他人物" />
                        <Label text="Others" />
                        <Text text="除以上8位出场人物之外的角色" wrappingWidth="220" />
-                       <Button fx:id="othersButton" mnemonicParsing="false" text="查看台词" />
-                  <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="123.0" text="返回主界面">
+                       <Button fx:id="othersButton" mnemonicParsing="false" onAction="#handleothersButton" text="查看台词" />
+                  <Button mnemonicParsing="false" onAction="#returnHomePage" prefHeight="39.0" prefWidth="123.0" text="返回主界面">
                      <VBox.margin>
                         <Insets top="30.0" />
                      </VBox.margin>

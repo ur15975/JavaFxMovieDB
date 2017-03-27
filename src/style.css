@@ -2,3 +2,25 @@ englishName{
     -fx-font-size: 16px;
     -fx-font-style: italic;
 }
+#playButton{
+    -fx-graphic: url("images/play.png");
+}
+#pauseButton{
+    -fx-graphic: url("images/pause.png");
+}
+#startButton{
+    -fx-graphic: url("images/start.png");
+}
+#lastButton{
+    -fx-graphic: url("images/last.png");
+}
+#fastButton{
+    -fx-graphic: url("images/fast.png");
+}
+#slowButton{
+    -fx-graphic: url("images/slow.png");
+}
+#reloadButton{
+    -fx-graphic: url("images/reload.png");
+}
+

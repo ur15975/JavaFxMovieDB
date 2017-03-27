@@ -52,11 +52,11 @@ public class CharactersSceneControls implements Initializable {
         try {
             Connection connection = dbConnection.connection();
             data = FXCollections.observableArrayList();
-            String character = StartSceneControls.getCharacters();
+            String character = CharactersListControls.select;
             ResultSet resultSet = connection.createStatement().executeQuery("SELECT time,chineseLine,englishLine,concat(CharacterChineseName,'(',CharacterName,')'),sceneId\n" +
                     "FROM sheet1 JOIN sheet2 USING (characterId)\n" +
-                    "WHERE CharacterChineseName LIKE '%" + StartSceneControls.characters +"%'\n" +
-                    "OR CharacterName LIKE '%" + StartSceneControls.characters + "%'");
+                    "WHERE CharacterChineseName LIKE '%" + character +"%'\n" +
+                    "OR CharacterName LIKE '%" + character + "%'");
             while (resultSet.next()) {
                 data.add(new DataModels(resultSet.getString(3),resultSet.getString(2),resultSet.getInt(1),resultSet.getString(4),""));
             }
@@ -75,12 +75,11 @@ public class CharactersSceneControls implements Initializable {
 
     @FXML
     private void returnHomePage(ActionEvent event) throws IOException {
-        Parent homeNode = FXMLLoader.load(getClass().getResource("StartScene.fxml"));
-        Scene homeScene = new Scene(homeNode, 394, 283);
+        Parent homeNode = FXMLLoader.load(getClass().getResource("CharactersList.fxml"));
+        Scene homeScene = new Scene(homeNode, 1098, 731);
         Stage homeStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         homeStage.hide();
         homeStage.setScene(homeScene);
         homeStage.show();
     }
-
 }

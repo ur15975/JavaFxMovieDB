@@ -1,3 +1,5 @@
+import javafx.beans.binding.Bindings;
+import javafx.beans.property.DoubleProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -6,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,8 +16,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -48,8 +55,6 @@ public class AllLinesSceneControls implements Initializable {
 
     private ObservableList<DataModels>data;
     private DbConnection dbConnection;
-
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -87,12 +92,22 @@ public class AllLinesSceneControls implements Initializable {
     @FXML
     private void returnHomePage(ActionEvent event) throws IOException{
         Parent homeNode = FXMLLoader.load(getClass().getResource("StartScene.fxml"));
-        Scene homeScene = new Scene(homeNode, 394, 283);
+        Scene homeScene = new Scene(homeNode, 380, 209);
         Stage homeStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         homeStage.hide();
         homeStage.setScene(homeScene);
         homeStage.show();
     }
 
+    @FXML
+    private void playMovie(ActionEvent event) throws IOException {
+        DataModels dataModels = tableData.getSelectionModel().getSelectedItem();
+        System.out.println(dataModels.getTime());
 
+        Parent playNode = FXMLLoader.load(getClass().getResource("player.fxml"));
+        Scene playScene = new Scene(playNode, 1280, 720);
+        Stage playStage = new Stage();
+        playStage.setScene(playScene);
+        playStage.show();
+    }
 }

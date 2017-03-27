@@ -63,11 +63,11 @@ public class StartSceneControls implements Initializable{
     }
 
     public void handleButtonLines(ActionEvent event) throws IOException {
+        linesChinese = textFieldChinese.getText();
+        linesEnglish = textFieldEnglish.getText();
         Parent chineseNode = FXMLLoader.load(getClass().getResource("AllLinesScene.fxml"));
         Scene chineseScene = new Scene(chineseNode, 1082, 692);
         Stage homePage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        linesChinese = textFieldChinese.getText();
-        linesEnglish = textFieldEnglish.getText();
         homePage.hide();
         homePage.setScene(chineseScene);
         homePage.show();
