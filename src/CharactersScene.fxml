@@ -22,6 +22,11 @@
                 <Font name="Microsoft Tai Le" size="39.0" />
             </font>
         </Label>
+        <Button fx:id="playButton" layoutX="60.0" layoutY="569.0" mnemonicParsing="false" onAction="#playMovie" prefHeight="43.0" prefWidth="180.0" text="播放当前所选台词">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
         <Button fx:id="returnButton" layoutX="865.0" layoutY="569.0" mnemonicParsing="false" onAction="#returnHomePage" prefHeight="43.0" prefWidth="180.0" text="返回角色列表">
             <font>
                 <Font size="18.0" />

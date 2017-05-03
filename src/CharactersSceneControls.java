@@ -1,6 +1,7 @@
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,6 +13,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 import java.net.URL;
@@ -81,5 +83,22 @@ public class CharactersSceneControls implements Initializable {
         homeStage.hide();
         homeStage.setScene(homeScene);
         homeStage.show();
+    }
+
+    @FXML
+    private void playMovie(ActionEvent event) throws IOException {
+        DataModels dataModels = tableCharacters.getSelectionModel().getSelectedItem();
+        PlayerControls.setTimeStartPlay(dataModels.getTime());
+        Parent playNode = FXMLLoader.load(getClass().getResource("Player.fxml"));
+        Scene playScene = new Scene(playNode, 1280, 800);
+        Stage playStage = new Stage();
+        playStage.setScene(playScene);
+        playStage.show();
+        playStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent event) {
+                PlayerControls.stopPlay();
+            }
+        });
     }
 }

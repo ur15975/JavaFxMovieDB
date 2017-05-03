@@ -2,25 +2,67 @@ englishName{
     -fx-font-size: 16px;
     -fx-font-style: italic;
 }
+#openfileButton{
+    -fx-background-image: url("images/icon-folder-128.png");
+    -fx-background-size: 20 20;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
 #playButton{
-    -fx-graphic: url("images/play.png");
+    -fx-background-image: url("images/play.png");
+    -fx-background-size: 20 20;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
 }
+
 #pauseButton{
-    -fx-graphic: url("images/pause.png");
+    -fx-background-image: url("images/pause.png");
+    -fx-background-size: 20 20;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
 }
-#startButton{
-    -fx-graphic: url("images/start.png");
+
+#stopButton{
+    -fx-background-image: url("images/stop.png");
+    -fx-background-size: 20 20;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
 }
-#lastButton{
-    -fx-graphic: url("images/last.png");
-}
-#fastButton{
-    -fx-graphic: url("images/fast.png");
-}
+
 #slowButton{
-    -fx-graphic: url("images/slow.png");
+    -fx-background-image: url("images/slow.png");
+    -fx-background-size: 20 20;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
 }
-#reloadButton{
-    -fx-graphic: url("images/reload.png");
+
+#slowerButton{
+    -fx-background-image: url("images/start.png");
+    -fx-background-size: 20 20;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+#fastButton{
+    -fx-background-image: url("images/fast.png");
+    -fx-background-size: 20 20;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+#fasterButton{
+    -fx-background-image: url("images/start.png");
+    -fx-background-size: 20 20;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
 }
 

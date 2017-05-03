@@ -1,14 +1,12 @@
-import javafx.beans.binding.Bindings;
-import javafx.beans.property.DoubleProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -16,12 +14,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -33,7 +28,6 @@ import java.util.ResourceBundle;
  * Created by Administrator on 2017/2/23.
  */
 public class AllLinesSceneControls implements Initializable {
-
     @FXML
     private TableView<DataModels> tableData;
 
@@ -80,11 +74,9 @@ public class AllLinesSceneControls implements Initializable {
         } catch (SQLException ex) {
             System.out.println("Error" + ex);
         }
-
         columnChineseLines.setCellValueFactory(new PropertyValueFactory<>("chineseLine"));
         columnEnglishLines.setCellValueFactory(new PropertyValueFactory<>("englishLine"));
         columnTime.setCellValueFactory(new PropertyValueFactory<>("time"));
-
         tableData.setItems(null);
         tableData.setItems(data);
     }
@@ -102,12 +94,17 @@ public class AllLinesSceneControls implements Initializable {
     @FXML
     private void playMovie(ActionEvent event) throws IOException {
         DataModels dataModels = tableData.getSelectionModel().getSelectedItem();
-        System.out.println(dataModels.getTime());
-
-        Parent playNode = FXMLLoader.load(getClass().getResource("player.fxml"));
-        Scene playScene = new Scene(playNode, 1280, 720);
+        PlayerControls.setTimeStartPlay(dataModels.getTime());
+        Parent playNode = FXMLLoader.load(getClass().getResource("Player.fxml"));
+        Scene playScene = new Scene(playNode, 1280, 800);
         Stage playStage = new Stage();
         playStage.setScene(playScene);
         playStage.show();
+        playStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent event) {
+                PlayerControls.stopPlay();
+            }
+        });
     }
 }

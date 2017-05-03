@@ -49,10 +49,9 @@ public class ScenesSceneControls implements Initializable {
         try {
             Connection connection = dbConnection.connection();
             data = FXCollections.observableArrayList();
-            ResultSet resultSet = connection.createStatement().executeQuery("SELECT time,chineseLine,englishLine,characterId,sceneName\n" +
-                    "FROM sheet1 JOIN sheet3 USING (sceneId)");
+            ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM sheet3");
             while (resultSet.next()) {
-                data.add(new DataModels(resultSet.getString(3),resultSet.getString(2),resultSet.getInt(1),"",resultSet.getString(5)));
+                data.add(new DataModels("",resultSet.getString(4),resultSet.getInt(3),"",resultSet.getString(2)));
             }
             connection.close();
         } catch (SQLException ex) {
