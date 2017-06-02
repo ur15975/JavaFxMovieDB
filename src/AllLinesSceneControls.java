@@ -27,6 +27,7 @@ import java.util.ResourceBundle;
 /**
  * Created by Administrator on 2017/2/23.
  */
+
 public class AllLinesSceneControls implements Initializable {
     @FXML
     private TableView<DataModels> tableData;
@@ -61,7 +62,7 @@ public class AllLinesSceneControls implements Initializable {
                 resultSet = connection.createStatement().executeQuery("SELECT * FROM sheet1 WHERE sheet1.chineseLine LIKE '%" + StartSceneControls.getLinesChinese().trim() + "%'");
             }
             else if(!StartSceneControls.linesEnglish.trim().equals("")){
-                resultSet = connection.createStatement().executeQuery("SELECT * FROM sheet1 WHERE sheet1.englishLine LIKE '%" + StartSceneControls.getLinesEnglish().trim() + "%'");
+                resultSet =  connection.createStatement().executeQuery("SELECT * FROM sheet1 WHERE sheet1.englishLine LIKE '%" + StartSceneControls.getLinesEnglish().trim() + "%'");
             }
             else {
                 resultSet = connection.createStatement().executeQuery("SELECT * FROM sheet1");

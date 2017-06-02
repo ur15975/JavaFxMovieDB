@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="JavaFXDB:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/JavaFXDB_jar</output-path>
-    <root id="archive" name="JavaFXDB_jar.jar">
-      <element id="module-output" name="JavaFXDB" />
-      <element id="extracted-dir" path="D:/mysql-connector-java-5.1.40-bin.jar" path-in-jar="/" />
-    </root>
-  </artifact>
-</component>
